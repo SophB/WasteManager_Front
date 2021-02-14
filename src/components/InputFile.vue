@@ -1,17 +1,31 @@
 <template>
-  <div class="container">
-    <div class="large-12 medium-12 small-12 cell">
-      <label>
-        <input
+  <v-container class="inputFile">
+    <v-row class="text-center">
+      <v-col cols="2"></v-col>
+      <v-col cols="8">
+        <v-file-input
           type="file"
           id="file"
           ref="file"
           v-on:change="handleFileUpload()"
-        />
-      </label>
-      <button v-on:click="submitFile()">Submit</button>
-    </div>
-  </div>
+          autofocus
+          chips
+          clearable
+          outlined
+          dense
+          shoow-size
+          prepend-icon="mdi-file"
+          hint=" Provide a .json file, and get your report"
+        ></v-file-input
+      ></v-col>
+
+      <v-col cols="2">
+        <v-btn fab dark color="indigo" v-on:click="submitFile()">
+          <v-icon dark> mdi-plus </v-icon>
+        </v-btn>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>

@@ -1,35 +1,35 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <InputFile />
+  <v-app>
+    <v-app-bar
+      app
+      color="indigo"
+      dark
+    >Waste Manager</v-app-bar>
 
-    <Report />
-  </div>
+    <v-main>
+      <Title/>
+      <InputFile />
+      <Report />
+    </v-main>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-import InputFile from "@/components/InputFile.vue";
-import Report from "@/components/Report.vue";
+import Title from '@/components/Title.vue';
+import InputFile from '@/components/InputFile.vue';
+import Report from '@/components/Report.vue';
 
 export default {
-  name: "App",
+  name: 'App',
+
   components: {
-    HelloWorld,
+    Title,
     InputFile,
     Report
   },
+
+  data: () => ({
+    //
+  }),
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
